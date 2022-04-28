@@ -35,3 +35,8 @@ out/
 
 ### VS Code ###
 .vscode/
+
+
+### 対象外 ###
+src/main/resources/public/
+frontend/yarn.lock
