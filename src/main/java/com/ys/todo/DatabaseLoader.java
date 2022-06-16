@@ -18,6 +18,6 @@ public class DatabaseLoader implements CommandLineRunner {
 	public void run(String... strings) throws Exception {
 		this.repository.save(new Todo("Test Todo", "Overview", "Content", 1));
 		this.repository.save(new Todo("Test Todo 2", "Overview 2", "Content 2", 1));
-		this.repository.save(new Todo("XX社様問い合わせ", "データエクスポートが実行できない", "データの修正済み今ソースで原因箇所特定中。", 1));
+		this.repository.save(new Todo("Test Todo 3", "Overview 3", "Content 3", 1));
 	}
 }
