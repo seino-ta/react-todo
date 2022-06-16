@@ -61,7 +61,7 @@ class Todo extends React.Component{
 
 ReactDOM.render(
 	<App />,
-	document.getElementById('react')
+	document.getElementById('root')
 )
 
 export default App;
