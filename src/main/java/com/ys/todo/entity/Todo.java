@@ -1,22 +1,31 @@
-package com.ys.todo;
+package com.ys.todo.entity;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "todo")
 public class Todo {
+	public Todo(){}
 
-	private @Id @GeneratedValue Long id;
+	@Id
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	@Column(name = "name")
 	private String name;
+	@Column(name = "overview")
 	private String overview;
+	@Column(name = "content")
 	private String content;
+	@Column(name = "status")
 	private int status;
-
-	private Todo() {
-	}
 
 	public Todo(String name, String overview, String content, int status) {
 		this.name = name;
@@ -41,11 +50,11 @@ public class Todo {
 		return Objects.hash(id, name, overview, content, status);
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
