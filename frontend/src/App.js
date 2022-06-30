@@ -34,18 +34,6 @@ class TodoList extends React.Component{
 		);
 		return (
 			<div>
-				<nav className="navbar" role="navigation" aria-label="main navigation">
-					<div id="navbarBasicExample" className="navbar-menu">
-						<div className="navbar-start">
-							<a className="navbar-item">
-								Home
-							</a>
-							<a className="navbar-item">
-								Documentation
-							</a>
-						</div>
-					</div>
-				</nav>
 				<div className="tile is-vertical">
 					<div className="tile">
 						<div className="tile is-parent">
@@ -69,7 +57,7 @@ class TodoList extends React.Component{
 				<footer className="footer">
 					<div className="content has-text-centered">
 						<p>
-						<strong>Bulma</strong> by Jeremy Thomas
+						<strong>TodoApp</strong>
 						</p>
 					</div>
 				</footer>
