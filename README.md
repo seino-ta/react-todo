@@ -6,7 +6,7 @@
 ## セットアップ手順
 
 ### PostgreSQLのインストール
-[PostgreSQL を Windows にインストールするには](https://qiita.com/tom-sato/items/037b8f8cb4b326710f71)を参考にPostgreSQLをインストールしてください。
+[PostgreSQL を Windows にインストールするには](https://qiita.com/tom-sato/items/037b8f8cb4b326710f71)を参考にPostgreSQLをインストールしてください。  
 その際のユーザー名やパスワードなどは忘れないようにしてください。
 
 ### Gradleのインストール
@@ -30,8 +30,8 @@
    ```
 
 ### application.propertiesの変更
-「`react-todo/src/main/resource`」以下の`application.properties`の以下の箇所を自分のデータベースの情報に照らし合わせて変更してください
- e.g.
+「`react-todo/src/main/resource`」以下の`application.properties`の以下の箇所を自分のデータベースの情報に照らし合わせて変更してください  
+ e.g.  
  - `spring.datasource.url=jdbc:postgresql://localhost:5432/todoapp`
  - `spring.datasource.username=postgres`
  - `spring.datasource.password=nota`
