@@ -26,7 +26,14 @@
    insert into todo (name, overview, content, status) values 
    ('DB Todo 1', 'OV 1', 'Content 1', 0),
    ('DB Todo 2', 'OV 2', 'Content 2', 1),
-   ('DB Todo 3', 'OV 3', 'Content 3', 2);
+   ('DB Todo 3', 'OV 3', 'Content 3', 2),
+   ('DB Todo 4', 'OV 4', 'Content 4', 0),
+   ('DB Todo 5', 'OV 5', 'Content 5', 1),
+   ('DB Todo 6', 'OV 6', 'Content 6', 2),
+   ('DB Todo 7', 'OV 7', 'Content 7', 0),
+   ('DB Todo 8', 'OV 8', 'Content 8', 1),
+   ('DB Todo 9', 'OV 9', 'Content 9', 2),
+   ('DB Todo 10', 'OV 10', 'Content 10', 0);
    ```
 
 ### application.propertiesの変更
