@@ -205,7 +205,7 @@ class TodoList extends React.Component {
 
 	render() {
 		const todos = this.props.todos.map(todo =>
-			<Todo key={todo._links.self.href} todo={todo} />
+			<Todo key={todo._links.self.href} todo={todo} onDelete={this.props.onDelete}/>
 		);
 
 		const navLinks = [];
