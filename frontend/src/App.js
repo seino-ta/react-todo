@@ -114,25 +114,8 @@ class CreateDialog extends React.Component {
 		this.state = {};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
-		/*
-		this.state = {
-			overview: "",
-			name: "",
-			content: "",
-			status: ""
-		}
-		this.handleChange = this.handleChange.bind(this)
-		*/
 	}
 
-	/*
-	handleChange(e) {
-        const {name, value} = e.target
-        this.setState({
-            [name]: value
-        })
-    }
-	*/
 	handleChange(event) {
 		this.setState({ [event.target.name] : event.target.value });
 	}
@@ -146,12 +129,6 @@ class CreateDialog extends React.Component {
 		newTodo.name = this.state.name;
 		newTodo.content = this.state.content;
 		newTodo.status = this.state.status;
-		
-		/*
-		this.props.attributes.forEach(attribute => {
-			//newTodo[attribute] = this.myrefs.current[attribute].value.trim();
-		});
-		*/
 		
 		this.props.onCreate(newTodo);
 
