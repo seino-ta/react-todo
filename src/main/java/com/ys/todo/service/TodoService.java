@@ -22,6 +22,6 @@ public class TodoService {
 	 * @return
 	 */
 	public List<Todo> findAll() {
-		return todoRepository.findAll();
+		return (List<Todo>) todoRepository.findAll();
 	}
 }
