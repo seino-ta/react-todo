@@ -174,12 +174,13 @@ class TodoList extends React.Component {
 
 	handleInput(e) {
 		e.preventDefault();
-		const pageSize = createTodoDialogRef[pageSize].value;
-		if (/^[0-9]+$/.test(pageSize)) {
+		const pageSize = this.myrefs.current.value;
+		if (/^[0-9]+$/.test(pageSize)) {// 数値
 			this.props.updatePageSize(pageSize);
-		} else {
-			createTodoDialogRef[pageSize].value =
-				pageSize.substring(0, pageSize.length - 1);
+		} else if (pageSize === "") {// 数値入力前に空にすることを考慮しこの場合は処理をスキップする
+			// Skip
+		} else {// 文字等
+			this.myrefs.current.value = this.props.pageSize;
 		}
 	}
 
@@ -224,6 +225,7 @@ class TodoList extends React.Component {
 
 		return (
 			<div>
+				<input ref={this.myrefs} defaultValue={this.props.pageSize} onInput={this.handleInput} />
 				<div className="tile is-vertical">
 					<div className="tile">
 						<div className="tile is-parent">
@@ -240,6 +242,9 @@ class TodoList extends React.Component {
 										{todos}
 									</tbody>
 								</table>
+								<div>
+									{navLinks}
+								</div>
 							</article>
 						</div>
 					</div>
