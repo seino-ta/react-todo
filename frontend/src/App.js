@@ -108,24 +108,35 @@ class App extends React.Component {
 }
 
 class CreateDialog extends React.Component {
-
 	constructor(props) {
 		super(props);
 		this.myrefs = React.createRef();
+		this.state = {};
+		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
+	handleChange(event) {
+		this.setState({ [event.target.name] : event.target.value });
+	}
+	
 	handleSubmit(e) {
 		e.preventDefault();
-		const newTodo = {};
-		this.props.attributes.forEach(attribute => {
-			newTodo[attribute] = createTodoDialogRef[attribute].value.trim();
-		});
+		var newTodo = {};
+
+		// ひとつづつ指定
+		newTodo.overview = this.state.overview;
+		newTodo.name = this.state.name;
+		newTodo.content = this.state.content;
+		newTodo.status = this.state.status;
+		
 		this.props.onCreate(newTodo);
 
 		// clear out the dialog's inputs
 		this.props.attributes.forEach(attribute => {
-			createTodoDialogRef[attribute].value = '';
+			//this.myrefs.current[attribute].value = '';
+			this.setState({ [attribute] : "" });
+			//画面上の要素からも値を消したい
 		});
 
 		// Navigate away from the dialog to hide it.
@@ -133,10 +144,9 @@ class CreateDialog extends React.Component {
 	}
 
 	render() {
-		this.createTodoDialogRef = React.createRef();
 		const inputs = this.props.attributes.map(attribute =>
 			<p key={attribute}>
-				<input type="text" placeholder={attribute} ref={attribute} className="field" />
+				<input type="text" name={attribute} placeholder={attribute} className="field" onChange={this.handleChange} />
 			</p>
 		);
 
